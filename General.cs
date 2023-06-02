@@ -12,7 +12,8 @@ namespace Advance5
         public string GeneralPiece = "G";
         public int[] Cell_AR_G;
 
-        public int[,] BoardBounds { get; }
+        // maybe not new
+        public new int[,] BoardBounds { get; }
 
         public General(bool isWhite, string typePiece, int[,] boardBounds, int[] cellAR_G)
         {
@@ -66,7 +67,10 @@ namespace Advance5
                 }
 
                 // Check if there is a piece at the new position
-                bool isOccupied = false; // TODO: replace with actual check for occupied position
+//if (newPosition[0] = Piece.){ }
+
+                bool isOccupied = Board.IsOccupied(newPosition[0], newPosition[2]);
+                // TODO: replace with actual check for occupied position
                 if (isOccupied)
                 {
                     // Skip this position and try the next one
@@ -81,6 +85,13 @@ namespace Advance5
         }
 
         public string GetGeneral() { return TypePiece; }
+        public int[] GetGeneralCoords()
+        {
+            int x = Cell_AR_G[0];
+            int y = Cell_AR_G[1];
+            int[] TotalCoords = { Cell_AR_G[0], Cell_AR_G[1] };
+            { return TotalCoords; };
+        }
         public bool GeneralWhite()
         {
             if (IsWhite) return true;

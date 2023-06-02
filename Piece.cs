@@ -21,7 +21,7 @@ namespace Advance5
             public string TypePiece { get; set; }
             public Piece CreatePieceFromSymbol(char pieceSymbol, int i, int x, int j, int[,] boardBounds)
             {
-                Piece piece = null;
+                Piece? piece = null;
 
                 switch (pieceSymbol)
                 {

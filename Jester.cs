@@ -10,7 +10,7 @@ namespace Advance5
     {
         
             public string JesterPiece = "J";
-            private int[] Cell_AR_J;
+            public int[] Cell_AR_J;
 
         public int[,] BoardBounds { get; }
 
@@ -66,7 +66,8 @@ namespace Advance5
                     }
 
                     // Check if there is a piece at the new position
-                    bool isOccupied = false; // TODO: replace with actual check for occupied position
+                    
+                    bool isOccupied = Board.IsOccupied(newPosition[0], newPosition[2]);
                     if (isOccupied)
                     {
                         // Skip this position and try the next one
@@ -81,6 +82,13 @@ namespace Advance5
             }
 
             public string GetJester() { return TypePiece; }
+            public int[] GetJesterCoords() 
+            {
+            int x = Cell_AR_J[0];
+            int y = Cell_AR_J[1];
+            int[] TotalCoords =  { Cell_AR_J[0],Cell_AR_J[1]};
+            { return TotalCoords; };
+            }
             public bool JesterWhite()
             {
                 if (IsWhite) return true;

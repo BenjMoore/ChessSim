@@ -65,7 +65,7 @@ namespace Advance5
                     }
 
                     // Check if there is a piece at the new position
-                    bool isOccupied = false; // TODO: replace with actual check for occupied position
+                    bool isOccupied = Board.IsOccupied(newPosition[0], newPosition[2]);
                     if (isOccupied)
                     {
                         // Skip this position and try the next one
@@ -80,7 +80,14 @@ namespace Advance5
             }
 
             public string GetCatapult() { return TypePiece; }
-            public bool CatapultWhite()
+        public int[] GetCatapultCoords()
+        {
+            int x = Cell_AR_C[0];
+            int y = Cell_AR_C[1];
+            int[] TotalCoords = { Cell_AR_C[0], Cell_AR_C[1] };
+            { return TotalCoords; };
+        }
+        public bool CatapultWhite()
             {
                 if (IsWhite) return true;
                 else return false;

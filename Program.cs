@@ -6,6 +6,7 @@ namespace Advance5
     {
         static void Main(string[] args)
         {
+            
             string[] lines = ReadBoardState();
             int[,] boardBounds = new int[,]
                 {
@@ -41,7 +42,7 @@ namespace Advance5
 
         static string[] ReadBoardState()
         {
-            var filePath = Directory.GetFiles(@"C:\\Users\\imoge\\source\\repos\\Advance3\\testdata", "*.txt", SearchOption.AllDirectories);
+            var filePath = Directory.GetFiles(@"D:\Downloads\Github\imogenasses\DefaultBoard", "*.txt", SearchOption.AllDirectories);
             List<string> printedBoards = new List<string>(); // Store the printed boards
 
             foreach (string file in filePath)

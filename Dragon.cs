@@ -11,7 +11,7 @@ namespace Advance5
         public string DragonPiece = "D";
         private int[] Cell_AR_D;
 
-        public int[,] BoardBounds { get; }
+        public new int[,] BoardBounds { get; }
 
         public Dragon(bool isWhite, string typePiece, int[,] boardBounds, int[] cellAR_D)
         {
@@ -86,7 +86,7 @@ namespace Advance5
                 }
 
                 // Check if there is a piece at the new position
-                bool isOccupied = false; // TODO: replace with actual check for occupied position
+                bool isOccupied = Board.IsOccupied(newPosition[0], newPosition[2]);
                 if (isOccupied)
                 {
                     // Skip this position and try the next one
@@ -101,6 +101,13 @@ namespace Advance5
         }
 
         public string GetDragon() { return TypePiece; }
+        public int[] GetDragonCoords()
+        {
+            int x = Cell_AR_D[0];
+            int y = Cell_AR_D[1];
+            int[] TotalCoords = { Cell_AR_D[0], Cell_AR_D[1] };
+            { return TotalCoords; };
+        }
         public bool DragonWhite()
         {
             if (IsWhite) return true;

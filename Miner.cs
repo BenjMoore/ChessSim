@@ -76,6 +76,13 @@ namespace Advance5
         }
 
         public string GetMiner() { return TypePiece; }
+        public int[] GetMinerCoords()
+        {
+            int x = Cell_AR_M[0];
+            int y = Cell_AR_M[1];
+            int[] TotalCoords = { Cell_AR_M[0], Cell_AR_M[1] };
+            { return TotalCoords; };
+        }
         public bool MinerWhite()
         {
             if (IsWhite) return true;

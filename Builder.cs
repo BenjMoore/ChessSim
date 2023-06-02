@@ -65,8 +65,8 @@ namespace Advance5
                     continue;
                 }
 
-                // Check if there is a piece at the new position
-                bool isOccupied = false; // TODO: replace with actual check for occupied position
+                // Check if there is a piece at the new position+
+                bool isOccupied = Board.IsOccupied(newPosition[0], newPosition[2]);
                 if (isOccupied)
                 {
                     // Skip this position and try the next one
@@ -81,6 +81,13 @@ namespace Advance5
         }
 
         public string GetBuilder() { return TypePiece; }
+        public int[] GetBuilderCoords()
+        {
+            int x = Cell_AR_B[0];
+            int y = Cell_AR_B[1];
+            int[] TotalCoords = { Cell_AR_B[0], Cell_AR_B[1] };
+            { return TotalCoords; };
+        }
         public bool BuilderWhite()
         {
             if (IsWhite) return true;

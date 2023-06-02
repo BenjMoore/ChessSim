@@ -17,8 +17,7 @@ namespace Advance5
         {
             int rows = boardBounds.GetLength(0);
             int columns = boardBounds.GetLength(1);
-            boardArray= new int[rows, columns];
-
+            boardArray = new int[rows, columns];
             boardArray = new int[rows, columns];
             isOccupied = new bool[rows, columns];
             pieces = new Piece[rows, columns];
@@ -62,6 +61,7 @@ namespace Advance5
             if (IsValidPosition(position) && pieces[position[0], position[1]] == null)
             {
                 pieces[position[0], position[1]] = piece;
+                SetOccupied(position[0], position[1], true);
                 return true;
             }
 

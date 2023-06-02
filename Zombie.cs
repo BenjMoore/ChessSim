@@ -60,8 +60,8 @@ namespace Advance5
                     }
 
                     // Check if there is a piece at the new position
-                    bool isOccupied = false; // TODO: replace with actual check for occupied position
-                    if (isOccupied)
+                    bool isOccupied = Board.IsOccupied(newPosition[0], newPosition[2]); // TODO: replace with actual check for occupied position
+                if (isOccupied)
                     {
                         // Skip this position and try the next one
                         continue;
@@ -75,7 +75,14 @@ namespace Advance5
             }
 
             public string GetZombie() { return TypePiece; }
-            public bool ZombieWhite()
+        public int[] GetZombieCoords()
+        {
+            int x = Cell_AR_Z[0];
+            int y = Cell_AR_Z[1];
+            int[] TotalCoords = { Cell_AR_Z[0], Cell_AR_Z[1] };
+            { return TotalCoords; };
+        }
+        public bool ZombieWhite()
             {
                 if (IsWhite) return true;
                 else return false;
