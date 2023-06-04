@@ -13,9 +13,9 @@ public class Bot
 		int[] WhereCatapult = catapult.GetCatapultCoords();
 		int[] WhereBuilder = builder.GetBuilderCoords();
 
-		
-		Console.WriteLine($"{WhereJester}");
+	
     }
+	// 
 
 	public void Run() {
 

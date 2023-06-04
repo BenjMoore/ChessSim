@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.Metrics;
+﻿using System.Collections.Generic;
+using System;
+using System.Diagnostics.Metrics;
 
 namespace Advance5
 {
@@ -36,10 +38,45 @@ namespace Advance5
 
             // Print the board with the pieces
             board.PrintBoard();
+            /*
+             Bot
 
-            // Rest of your code...
+            determine whos turn it is
+            select a random peice from the color whos turn it is
+
+            check if the peice is obstructed
+            if so:
+                select a new peice 
+            else:
+                pick a usable move
+                select a random usable move
+                update the board state to the new game
+                read the new board state and clear the old one.
+
+             */
+
+            bool isWhiteTurn = true;
+
+            List<String> pieceOptions = new List<String>();
+
+            pieceOptions.Add("General");
+            pieceOptions.Add("Zombie");
+            pieceOptions.Add("Senteniel");
+            pieceOptions.Add("Miner");
+            pieceOptions.Add("Jester");
+            pieceOptions.Add("Dragon");
+            pieceOptions.Add("Catapult");
+            pieceOptions.Add("Builder");
+
+            int inPlay = rnd.Next(pieceOptions.Count);
+            Console.WriteLine(pieceOptions[inPlay]);
+
+            
+
         }
 
+        static Random rnd = new Random();
+        public string[] piecesInPlay; 
         static string[] ReadBoardState()
         {
             var filePath = Directory.GetFiles(@"D:\Downloads\Github\imogenasses\DefaultBoard", "*.txt", SearchOption.AllDirectories);
@@ -69,6 +106,11 @@ namespace Advance5
                         if (piece != null)
                         {
                             object value = board.AddPiece(piece);
+                            Console.WriteLine(piece);
+                            List<String> piecesInPlay = new List<String>();
+
+
+
                         }
                     }
                 }
@@ -110,6 +152,7 @@ namespace Advance5
                 default:
                     return null; // Invalid symbol, return null for empty squares
             }
+           
         }
     }
 

@@ -67,6 +67,10 @@ namespace Advance5
 
             return false;
         }
+        public void MovePiece() 
+        { 
+
+        }
 
         private bool IsValidPosition(int[] position)
         {
@@ -77,5 +81,6 @@ namespace Advance5
 
             return row >= 0 && row < numRows && col >= 0 && col < numCols;
         }
+       
     }
 }
