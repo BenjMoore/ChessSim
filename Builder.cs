@@ -27,20 +27,21 @@ namespace Advance5
             // Initialize the Cell_AR variable
             this.Cell_AR_B = cellAR_B;
         }
-
         public Builder(bool isWhite, char typePiece, int[,] boardBounds)
         {
             this.isWhite = isWhite;
             this.typePiece = typePiece;
             BoardBounds = boardBounds;
         }
-
         public void Move(int[] boardBounds)
         {
+           
+            int[] TotalCoords = { Cell_AR_B[0], Cell_AR_B[1] };
+           
+
             // Get the current position of the Zombie piece
             int[] currentPosition = Cell_AR_B;
-            int x = Cell_AR_B[0];
-            int y = Cell_AR_B[1];
+           
 
             // Find the usable positions for the next move
             int[][] usablePositions = new int[][]
@@ -76,18 +77,17 @@ namespace Advance5
                 // Move the Zombie piece to the new position
                 Cell_AR_B = newPosition;
                 Console.WriteLine($"Moved Builder to position ({newPosition[0]}, {newPosition[1]})");
-                break; // Stop trying positions once a valid move is found
+                
+               
+                
             }
         }
 
         public string GetBuilder() { return TypePiece; }
-        public int[] GetBuilderCoords()
-        {
-            int x = Cell_AR_B[0];
-            int y = Cell_AR_B[1];
-            int[] TotalCoords = { Cell_AR_B[0], Cell_AR_B[1] };
-            { return TotalCoords; };
-        }
+       
+      
+
+    
         public bool BuilderWhite()
         {
             if (IsWhite) return true;

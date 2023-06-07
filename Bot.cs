@@ -11,7 +11,7 @@ public class Bot
 		int[] WhereGeneral = general.GetGeneralCoords();
 		int[] WhereDragon = dragon.GetDragonCoords();
 		int[] WhereCatapult = catapult.GetCatapultCoords();
-		int[] WhereBuilder = builder.GetBuilderCoords();
+	
 
 	
     }

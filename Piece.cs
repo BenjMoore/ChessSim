@@ -10,7 +10,7 @@ namespace Advance5
     public abstract class Piece
         {
             public bool IsWhite { get; set; }
-            public int[] pos = new int[] { -1, 1 };
+            public int[] pos = new int[] { 1,1};
             public int[] BoardBounds = new int[] { 9, 9 };
             public bool MoveComplete = false;
             public bool isOccupied = false;
